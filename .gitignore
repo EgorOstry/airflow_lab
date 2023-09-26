@@ -1,6 +1,6 @@
 \venv
 .env
-\dags\__pycache__
+\__pycache__
 \logs
 \plugins
 \config
