@@ -25,7 +25,7 @@ workflow = DAG(
     start_date=datetime(2023,1,1),
     end_date=datetime(2023,7,1),
     schedule_interval='0 6 2 * *',
-    max_active_runs=1
+    max_active_runs=1 #one task per time, comment the line if your system is strong enough to perform multitask
 
 )
 
