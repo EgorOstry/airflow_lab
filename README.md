@@ -5,8 +5,8 @@ This repository contains an educational project to demonstrate the use of Apache
 Follow these steps to run the project:
 
 1.Clone the repository:
-`git clone https://github.com/EgorOstry/airflow_lab.git`
-`cd airflow_lab`
+```git clone https://github.com/EgorOstry/airflow_lab.git
+cd airflow_lab```
 
 2.Initialize the Airflow database and initialize the metadata:
 `docker-compose run airflow-cli db init`
