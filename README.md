@@ -19,9 +19,9 @@ docker-compose up airflow-init
 docker-compose up -d
 ``` 
 4.Access the Airflow web interface by opening the following URL in your web browser:
-http://localhost:8080/home
-Login: Airflow
-Password: Airflow
+`http://localhost:8080/home`
+`Login: Airflow`
+`Password: Airflow`
 
 5.Connect to the PostgreSQL database:
 Host: localhost
