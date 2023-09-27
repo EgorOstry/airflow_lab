@@ -10,7 +10,8 @@ git clone https://github.com/EgorOstry/airflow_lab.git
 cd airflow_lab
 ```
 2.Initialize the Airflow database and initialize the metadata:
-``` bashdocker-compose run airflow-cli db init
+``` bash
+docker-compose run airflow-cli db init
 docker-compose up airflow-init
 ``` 
 3.Start the Airflow environment in detached mode:
