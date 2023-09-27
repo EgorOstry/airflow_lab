@@ -20,14 +20,15 @@ docker-compose up -d
 ``` 
 4.Access the Airflow web interface by opening the following URL in your web browser:
 `http://localhost:8080/home`
-`Login: Airflow`
-`Password: Airflow`
+   - **Username:** Airflow
+   - **Password:** Airflow
 
-5.Connect to the PostgreSQL database:
-Host: localhost
-Port: 5432
-Username: root
-Password: root
+5. Connect to the PostgreSQL database:
+   - **Host:** localhost
+   - **Port:** 5432
+   - **Username:** root
+   - **Password:** root
+
 
 6.Start the "IngestionDag" DAG in the Airflow web interface to initiate the data ingestion process.
 
