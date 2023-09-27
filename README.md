@@ -5,16 +5,18 @@ This repository contains an educational project to demonstrate the use of Apache
 Follow these steps to run the project:
 
 1.Clone the repository:
-```git clone https://github.com/EgorOstry/airflow_lab.git
-cd airflow_lab```
-
+``` bash
+git clone https://github.com/EgorOstry/airflow_lab.git
+cd airflow_lab
+```
 2.Initialize the Airflow database and initialize the metadata:
-`docker-compose run airflow-cli db init`
-`docker-compose up airflow-init`
-
+``` bashdocker-compose run airflow-cli db init
+docker-compose up airflow-init
+``` 
 3.Start the Airflow environment in detached mode:
-`docker-compose up -d`
-
+``` bash
+docker-compose up -d
+``` 
 4.Access the Airflow web interface by opening the following URL in your web browser:
 http://localhost:8080/home
 Login: Airflow
