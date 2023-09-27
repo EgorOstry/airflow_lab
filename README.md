@@ -9,7 +9,8 @@ Follow these steps to run the project:
 git clone https://github.com/EgorOstry/airflow_lab.git
 cd airflow_lab
 ```
-Create .env file with PG_USER=*** PG_PASS=*** PG_DB=*** PG_PORT=***
+
+2. Create .env file with PG_USER=*** PG_PASS=*** PG_DB=*** PG_PORT=***
 for example
 ``` bash
 touch .env
@@ -20,25 +21,26 @@ echo "PG_PORT='5432'" >> .env
 ```
 
 Run
+
 ``` bash
 echo -e "AIRFLOW_UID=$(id -u)" >> .env
 ```
 
-2.Initialize the Airflow database and initialize the metadata:
+3.Initialize the Airflow database and initialize the metadata:
 ``` bash
 docker-compose run airflow-cli db init
 docker-compose up airflow-init
 ``` 
-3.Start the Airflow environment in detached mode:
+4.Start the Airflow environment in detached mode:
 ``` bash
 docker-compose up -d
 ``` 
-4.Access the Airflow web interface by opening the following URL in your web browser:
+5.Access the Airflow web interface by opening the following URL in your web browser:
 `http://localhost:8080/home`
    - **Username:** Airflow
    - **Password:** Airflow
 
-5. Connect to the PostgreSQL database:
+6. Connect to the PostgreSQL database:
    - **Host:** localhost
    - **Port:** PG_PORT from .env
    - **Username:** PG_USER from .env
