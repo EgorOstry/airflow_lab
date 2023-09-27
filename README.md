@@ -9,6 +9,12 @@ Follow these steps to run the project:
 git clone https://github.com/EgorOstry/airflow_lab.git
 cd airflow_lab
 ```
+Create .env file with PG_USER=*** PG_PASS=*** PG_DB=*** PG_PORT=***
+Run
+``` bash
+echo -e "AIRFLOW_UID=$(id -u)" >> .env
+```
+
 2.Initialize the Airflow database and initialize the metadata:
 ``` bash
 docker-compose run airflow-cli db init
@@ -25,9 +31,9 @@ docker-compose up -d
 
 5. Connect to the PostgreSQL database:
    - **Host:** localhost
-   - **Port:** 5432
-   - **Username:** root
-   - **Password:** root
+   - **Port:** PG_PORT from .env
+   - **Username:** PG_USER from .env
+   - **Password:** PG_PASS from .env
 
 
 6.Start the "IngestionDag" DAG in the Airflow web interface to initiate the data ingestion process.
