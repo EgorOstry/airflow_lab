@@ -17,6 +17,7 @@ echo "PG_USER='root'" >> .env
 echo "PG_PASS='root'" >> .env
 echo "PG_DB='ny_taxi'" >> .env
 echo "PG_PORT='5432'" >> .env
+```
 
 Run
 ``` bash
