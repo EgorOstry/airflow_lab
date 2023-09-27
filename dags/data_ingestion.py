@@ -13,19 +13,13 @@ URL_TEMPLATE = URL_PREFIX + "yellow_tripdata_{{execution_date.strftime(\'%Y-%m\'
 OUTPUT_TEMPLATE = AIRFLOW_HOME + "/output_{{execution_date.strftime(\'%Y-%m\')}}.parquet"
 TABLE_TEMPLATE = "yellow_taxi_data"
 
-default_args = {
-    'owner': 'Ostry',
-    'start_date': datetime(2023, 1, 1),
-    'retry_delay': timedelta(seconds=10),
-}
-
 
 workflow = DAG(
     dag_id='IngestionDag',
     start_date=datetime(2023,1,1),
     end_date=datetime(2023,7,1),
     schedule_interval='0 6 2 * *',
-    max_active_runs=1 #one task per time, comment the line if your system is strong enough to perform multitask
+    # max_active_runs=1, #for one task per time. use it if tasks are failing when running multiple tasks per time
 
 )
 
@@ -39,8 +33,8 @@ with workflow:
     load_task = PythonOperator(
         task_id='load',
         python_callable=ingest_data,
-        retries=3,
-        retry_delay=timedelta(seconds=10),
+        # retries=3, #to retry the task if failed
+        # retry_delay=timedelta(seconds=10), #to retry the task in 10 seconds after failing
         op_kwargs=dict(
             parquet_file=OUTPUT_TEMPLATE,
             table_name=TABLE_TEMPLATE
